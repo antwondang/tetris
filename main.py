@@ -9,7 +9,8 @@ pygame.display.set_caption("Python Tetris")
 
 clock = pygame.time.Clock()
 
-
+game_grid = Grid()
+game_grid.print_grid()
 
 while True:
     for event in pygame.event.get():
