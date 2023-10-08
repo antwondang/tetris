@@ -12,8 +12,7 @@ clock = pygame.time.Clock()
 
 game_grid = Grid()
 
-
-game_grid.print_grid()
+block = LBlock()
 
 while True:
     for event in pygame.event.get():
@@ -23,6 +22,7 @@ while True:
 
     screen.fill(dark_blue)
     game_grid.draw(screen)
+    block.draw(screen)
 
     pygame.display.update()
     clock.tick(60)
