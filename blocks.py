@@ -13,7 +13,7 @@ class LBlock(Block):
 
 class JBlock(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 2)
         self.cells = {
             0: [Position(0,0), Position(1,0), Position(1,1), Position(1,2)],
             1: [Position(0,1), Position(0,2), Position(1,1), Position(2,1)],
@@ -23,7 +23,7 @@ class JBlock(Block):
 
 class iBlock(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 3)
         self.cells = {
             0: [Position(1,0), Position(1,1), Position(1,2), Position(1,3)],
             1: [Position(0,2), Position(1,2), Position(2,2), Position(3,2)],
@@ -33,7 +33,7 @@ class iBlock(Block):
 
 class oBlock(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 4)
         self.cells = {
             0: [Position(0,0), Position(0,1), Position(1,0), Position(1,1)],
             1: [Position(0,0), Position(0,1), Position(1,0), Position(1,1)],
@@ -43,7 +43,7 @@ class oBlock(Block):
 
 class sBlock(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 5)
         self.cells = {
             0: [Position(0,1), Position(0,2), Position(1,0), Position(1,1)],
             1: [Position(0,1), Position(1,1), Position(1,2), Position(2,2)],
@@ -53,7 +53,7 @@ class sBlock(Block):
 
 class tBlock(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 6)
         self.cells = {
             0: [Position(0,1), Position(1,0), Position(1,1), Position(1,2)],
             1: [Position(0,1), Position(1,1), Position(1,2), Position(2,1)],
@@ -63,7 +63,7 @@ class tBlock(Block):
 
 class zBlock(Block):
     def __init__(self):
-        super().__init__(id = 1)
+        super().__init__(id = 7)
         self.cells = {
             0: [Position(0,0), Position(0,1), Position(1,1), Position(1,2)],
             1: [Position(0,2), Position(1,1), Position(1,2), Position(2,1)],
