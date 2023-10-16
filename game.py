@@ -44,3 +44,5 @@ class Game:
     
     def rotate(self):
         self.current_block.rotate()
+        if self.block_inside() == False:
+            self.current_block.undo_rotation()
