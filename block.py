@@ -22,13 +22,9 @@ class Block:
             position = Position(position.row + self.row_offset, position.column + self.column_offset)
             moved_tiles.append(position)
         return moved_tiles
-
-    def draw(self, screen):
-        tiles = self.get_cell_positions()
-        for tile in tiles:
-            tile_rect = pygame.Rect(tile.column * self.cell_size + 1, tile.row * self.cell_size + 1, self.cell_size - 1, self.cell_size - 1)
-            pygame.draw.rect(screen , self.colors[self.id], tile_rect)
-
+    
+    
+    
     def rotate(self):
         self.rotation_state += 1
         if self.rotation_state == len(self.cells):
@@ -39,3 +35,8 @@ class Block:
         if self.rotation_state == 0:
             self.rotation_state == len(self.cells) - 1
 
+    def draw(self, screen):
+            tiles = self.get_cell_positions()
+            for tile in tiles:
+                tile_rect = pygame.Rect(tile.column * self.cell_size + 1, tile.row * self.cell_size + 1, self.cell_size - 1, self.cell_size - 1)
+                pygame.draw.rect(screen , self.colors[self.id], tile_rect)
