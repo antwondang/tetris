@@ -16,9 +16,7 @@ class Game:
         self.blocks.remove(block)
         return block
 
-    def draw(self, screen):
-        self.grid.draw(screen)
-        self.current_block.draw(screen)
+
 
     def move_left(self):
         self.current_block.move(0, -1)
@@ -34,6 +32,21 @@ class Game:
         self.current_block.move(1, 0)
         if self.block_inside() == False:
             self.current_block.move(-1, 0)
+            self.lock_block()
+
+    def lock_block(self):
+        locktiles = self.current_block.get_cell_positions()
+        for position in locktiles:
+            self.grid.grid[position.row][position.column] = self.current_block.id
+        self.current_block = self.next_block
+        self.next_block = self.get_random_block()
+
+    def block_fits(self):
+        tiles = self.current_block.get_cell_positions()
+        for tile in tiles:
+            if self.grid.is_empty(tile.row, tile.column) == False:
+                return False
+        return True
     
     def rotate(self):
         self.current_block.rotate()
@@ -47,4 +60,9 @@ class Game:
                 return False
         return True
     
+    def draw(self, screen):
+        self.grid.draw(screen)
+        self.current_block.draw(screen)
+
+
     
